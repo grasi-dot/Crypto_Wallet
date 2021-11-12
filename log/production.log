@@ -1,0 +1,24 @@
+D, [2021-11-11T15:50:35.396421 #53277] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+D, [2021-11-11T15:50:35.397859 #53277] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+D, [2021-11-11T15:50:35.400118 #53277] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2021-11-11T15:50:35.408613 #53277] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+I, [2021-11-11T15:50:35.408762 #53277]  INFO -- : Migrating to CreateCoins (20210920213159)
+D, [2021-11-11T15:50:35.411647 #53277] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+D, [2021-11-11T15:50:35.413311 #53277] DEBUG -- :   [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "coins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "acronym" varchar, "url_image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2021-11-11T15:50:35.416060 #53277] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210920213159"]]
+D, [2021-11-11T15:50:35.417114 #53277] DEBUG -- :   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+I, [2021-11-11T15:50:35.417212 #53277]  INFO -- : Migrating to CreateMiningTypes (20211109212802)
+D, [2021-11-11T15:50:35.417876 #53277] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2021-11-11T15:50:35.418931 #53277] DEBUG -- :   [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "mining_types" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "acronym" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2021-11-11T15:50:35.420903 #53277] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211109212802"]]
+D, [2021-11-11T15:50:35.422226 #53277] DEBUG -- :   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+I, [2021-11-11T15:50:35.422357 #53277]  INFO -- : Migrating to AddMiningTypeToCoins (20211109215420)
+D, [2021-11-11T15:50:35.423937 #53277] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2021-11-11T15:50:35.425704 #53277] DEBUG -- :   [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "coins" ADD "mining_type_id" integer[0m
+D, [2021-11-11T15:50:35.427074 #53277] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_coins_on_mining_type_id" ON "coins" ("mining_type_id")[0m
+D, [2021-11-11T15:50:35.428711 #53277] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211109215420"]]
+D, [2021-11-11T15:50:35.430134 #53277] DEBUG -- :   [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+D, [2021-11-11T15:50:35.432316 #53277] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2021-11-11T15:50:35.442903 #53277] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2021-11-11T15:50:35.477090 #53277] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "production"], ["created_at", "2021-11-11 18:50:35.443325"], ["updated_at", "2021-11-11 18:50:35.443325"]]
+D, [2021-11-11T15:50:35.479703 #53277] DEBUG -- :   [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
