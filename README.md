@@ -1,24 +1,15 @@
-# README
+# Crypto Wallet <img align="center" alt="Grasi-Flutter" height="70" width="80" src="https://media.giphy.com/media/jsNIKFrb6wZzKOXerG/giphy.gif">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pequena aplicacao para o estudo de Ruby on Rails e linguagem Ruby, nesta aplicacao foram aplicados conceitos basicos do framework Rails. 
 
-Things you may want to cover:
+## Ferramentas :point_left:
+<div style="display: inline_block"><br>
+  <img align="center" alt="Grasi-Flutter" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg">
+  <img align="center" alt="Grasi-Dart" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg">
+  <img align="center" alt="Grasi-Pythont" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+  
+</div>
 
-* Ruby version
+## Fontes :point_left:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Curso Udemy - Modulo 2 - https://www.udemy.com/course/rubyonrails-5x/
